@@ -9,6 +9,7 @@ import javax.swing.*;
 		static Calendar grid = new Calendar();
 		static Container container = grid.getContentPane();
 		static ArrayList<JPanel>components = new ArrayList<JPanel>();
+		
 		public static void main(String[] args) {
 			Color blankColor = new Color(50, 50, 50, 50);
 			grid.setTitle("The Bunny Calendar");
@@ -22,7 +23,7 @@ import javax.swing.*;
 				  temp = new JPanel();
 				  container.add(temp);
 				  components.add(temp);
-				  if (((i % 50) < 45) && ((i % 50 ) > 14) && (i > 250) && (i < 1750)) {
+				  if (((i % 50) < 45) && ((i % 50 ) > 17) && (i > 250) && (i < 1350)) {
 					  components.get(i).setBackground(blankColor);
 				  }
 				  else {
