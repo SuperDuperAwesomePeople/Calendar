@@ -9,9 +9,9 @@ import javax.swing.*;
 		static Calendar grid = new Calendar();
 		static Container container = grid.getContentPane();
 		static ArrayList<JPanel>components = new ArrayList<JPanel>();
-			
 		public static void main(String[] args) {
 			Color blankColor = new Color(50, 50, 50, 50);
+			grid.setTitle("The Bunny Calendar");
 			grid.setSize(500,500);
 			grid.setResizable( true );
 			grid.setLocationRelativeTo( null );
