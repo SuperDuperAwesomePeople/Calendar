@@ -1,35 +1,35 @@
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.util.ArrayList;
-import java.awt.Color;
-import javax.swing.*;
-	
+
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Dimension;
+
 	public class Calendar extends JFrame {
-			
+		
 		static Calendar grid = new Calendar();
 		static Container container = grid.getContentPane();
 		static ArrayList<JPanel>components = new ArrayList<JPanel>();
-		
+		static JFrame app;
+		static JPanel panel1 = new JPanel();
+		static JPanel panel2 = new JPanel();
 		public static void main(String[] args) {
-			Color blankColor = new Color(50, 50, 50, 50);
-			grid.setTitle("The Bunny Calendar");
+			container.setLayout(new BoxLayout(container, BoxLayout.X_AXIS));
+			
+			grid.add(panel1);
+			grid.add(panel2);
+			panel1.setPreferredSize(new Dimension(150, 400));
+			panel2.setPreferredSize(new Dimension(350,100));
+			grid.setTitle("Calendar");
 			grid.setSize(500,500);
 			grid.setResizable( true );
 			grid.setLocationRelativeTo( null );
-			grid.setLayout( new GridLayout(50,50) );
 			JPanel temp = null;
-			for ( int i = 0; i < 2500; i++ )
-			{
-				  temp = new JPanel();
-				  container.add(temp);
-				  components.add(temp);
-				  if (((i % 50) < 45) && ((i % 50 ) > 17) && (i > 250) && (i < 1350)) {
-					  components.get(i).setBackground(blankColor);
-				  }
-				  else {
-					  components.get( i ).setBackground( Color.WHITE );
-				  }
-			}
+			panel1.setBackground(Color.BLUE);
+			panel2.setBackground(Color.GREEN);
 			grid.setVisible(true);
 		}
 
