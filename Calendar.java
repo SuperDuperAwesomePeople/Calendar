@@ -6,6 +6,7 @@ import java.util.Random;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -43,12 +44,22 @@ import java.awt.Dimension;
 			for (int i = 0; i < labels.length; i++) {
 			    JLabel label = new JLabel();
 			    label.setPreferredSize(new Dimension(22, 22 )); 
-			    label.setBorder(blackline);
-			    
-			    
+			    if (i <= 30) {
+			    	label.setText(Integer.toString(i+1));
+			        label.setHorizontalTextPosition(JLabel.RIGHT);
+					label.setBorder(blackline);
+			    }
+	
 			    panel2.add(label);
 			    labels[i] = label;
+
 			}
+		    String[] months = { "January","February", "March","April","May","June", "July", "August", "September", "October", "November", "December"};
+
+		    final JComboBox<String> cb = new JComboBox<String>(months);
+
+		    cb.setVisible(true);
+		    panel1.add(cb);
 			grid.setVisible(true);
 		}
 
