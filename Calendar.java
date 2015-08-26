@@ -1,6 +1,10 @@
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Cursor;
 import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -9,12 +13,14 @@ import javax.swing.BoxLayout;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
 import java.awt.Dimension;
 
-	public class Calendar extends JFrame {
+	public class Calendar extends JFrame implements MouseListener {
 		
 		static Calendar grid = new Calendar();
 		static Container container = grid.getContentPane();
@@ -42,12 +48,22 @@ import java.awt.Dimension;
 
 
 			for (int i = 0; i < labels.length; i++) {
-			    JLabel label = new JLabel();
+			    JLabel label = new JLabel("", SwingConstants.CENTER);
 			    label.setPreferredSize(new Dimension(22, 22 )); 
 			    if (i <= 30) {
 			    	label.setText(Integer.toString(i+1));
+				    label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			        label.setHorizontalTextPosition(JLabel.RIGHT);
 					label.setBorder(blackline);
+					label.addMouseListener(new MouseAdapter()  
+					{  
+					    public void mouseClicked(MouseEvent e)  
+					    {  
+					       // you can open a new frame here as
+					       // i have assumed you have declared "frame" as instance variable
+					    	JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+					    }  
+					}); 
 			    }
 	
 			    panel2.add(label);
@@ -61,6 +77,33 @@ import java.awt.Dimension;
 		    cb.setVisible(true);
 		    panel1.add(cb);
 			grid.setVisible(true);
+			
+			
+		}
+		@Override
+		public void mouseClicked(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mouseEntered(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mouseExited(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mousePressed(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void mouseReleased(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
 		}
 
 }
