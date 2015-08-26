@@ -59,8 +59,6 @@ import java.awt.Dimension;
 					{  
 					    public void mouseClicked(MouseEvent e)  
 					    {  
-					       // you can open a new frame here as
-					       // i have assumed you have declared "frame" as instance variable
 					    	JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
 					    }  
 					}); 
