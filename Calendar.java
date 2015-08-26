@@ -50,9 +50,8 @@ import java.awt.Dimension;
 			for (int i = 0; i < labels.length; i++) {
 			    JLabel label = new JLabel("", SwingConstants.CENTER);
 			    label.setPreferredSize(new Dimension(22, 22 )); 
-			    if (i <= 30) {
-			    	label.setText(Integer.toString(i+1));
-				    label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			    if (i <= 37 && i > 6) {
+			    	label.setText(Integer.toString(i-6));
 			        label.setHorizontalTextPosition(JLabel.RIGHT);
 					label.setBorder(blackline);
 					label.addMouseListener(new MouseAdapter()  
