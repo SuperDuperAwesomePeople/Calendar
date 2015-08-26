@@ -2,6 +2,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -29,6 +31,7 @@ import java.awt.Dimension;
 		static JPanel panel1 = new JPanel();
 		static JPanel panel2 = new JPanel();
 		static Border blackline;
+		static Border empty;
 		public static void main(String[] args) {
 			container.setLayout(new BoxLayout(container, BoxLayout.X_AXIS));
 			
@@ -45,6 +48,7 @@ import java.awt.Dimension;
 			panel2.setLayout( new GridLayout(6, 7));
 			JLabel[] labels = new JLabel[42];
 			blackline = BorderFactory.createLineBorder(Color.black);
+			empty = BorderFactory.createEmptyBorder();
 
 
 			for (int i = 0; i < labels.length; i++) {
@@ -65,18 +69,18 @@ import java.awt.Dimension;
 			    	label.setText("Saturday");
 			    }
 			    label.setPreferredSize(new Dimension(22, 22 )); 
-			    if (i <= 37 && i > 6) {
-			    	label.setText(Integer.toString(i-6));
-			    	label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			    if (i <= 41 && i > 10) {
+			    	label.setText(Integer.toString(i-10));
 			        label.setHorizontalTextPosition(JLabel.RIGHT);
 					label.setBorder(blackline);
-					label.addMouseListener(new MouseAdapter()  
-					{  
-					    public void mouseClicked(MouseEvent e)  
-					    {  
-					    	JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
-					    }  
-					}); 
+		    		label.addMouseListener(new MouseAdapter()  
+		    		   {  
+		    			   public void mouseClicked(MouseEvent e)  
+		    			   {  
+		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+		    			   }  
+		    		   }); 
+		    		label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			    }
 	
 			    panel2.add(label);
@@ -86,6 +90,230 @@ import java.awt.Dimension;
 		    String[] months = { "January","February", "March","April","May","June", "July", "August", "September", "October", "November", "December"};
 
 		    final JComboBox<String> cb = new JComboBox<String>(months);
+		    cb.addActionListener(
+		                new ActionListener(){
+		                    public void actionPerformed(ActionEvent e){
+		                       String currentMonth = (String)cb.getSelectedItem();
+		                       if (currentMonth == "January"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i < 42 && i > 10) {
+			           		    		   labels[i].setText(Integer.toString(i-10));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		           		       if (currentMonth == "February"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i < 35) {
+			           		    		   labels[i].setText(Integer.toString(i-6));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		           		       if (currentMonth == "March"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i < 38) {
+			           		    		   labels[i].setText(Integer.toString(i-6));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		           		       if (currentMonth == "April"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i < 40 && i > 9) {
+			           		    		   labels[i].setText(Integer.toString(i-9));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		           		       if (currentMonth == "May"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i > 11) {
+			           		    		   labels[i].setText(Integer.toString(i-11));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		           		       if (currentMonth == "June"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i < 38 && i > 7) {
+			           		    		   labels[i].setText(Integer.toString(i-7));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		           		       if (currentMonth == "July"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i < 41 && i > 9) {
+			           		    		   labels[i].setText(Integer.toString(i-9));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		           		       if (currentMonth == "August"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i > 12) {
+			           		    		   labels[i].setText(Integer.toString(i-12));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		           		       if (currentMonth == "September"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i < 39 && i > 8) {
+			           		    		   labels[i].setText(Integer.toString(i-8));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		           		       if (currentMonth == "October"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i > 10 && i < 42) {
+			           		    		   labels[i].setText(Integer.toString(i-10));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		           		       if (currentMonth == "November"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i < 37 && i > 6) {
+			           		    		   labels[i].setText(Integer.toString(i-6));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		           		       if (currentMonth == "December"){
+		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    		   labels[i].setText("");
+		           		    		   labels[i].setBorder(empty);
+		           		    		   if (i < 40 && i > 8) {
+			           		    		   labels[i].setText(Integer.toString(i-8));
+			           		    		   labels[i].setBorder(blackline);
+			           		    		   labels[i].addMouseListener(new MouseAdapter()  
+			           		    		   {  
+			           		    			   public void mouseClicked(MouseEvent e)  
+			           		    			   {  
+			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    			   }  
+			           		    		   }); 
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   }
+		           		    	   }
+		        		       }
+		                    }
+		                }            
+		        );
+
 
 		    cb.setVisible(true);
 		    panel1.add(cb);
@@ -120,4 +348,3 @@ import java.awt.Dimension;
 		}
 
 }
-	
