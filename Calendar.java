@@ -8,7 +8,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-import java.util.Random;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -45,8 +44,8 @@ import java.awt.Dimension;
 			grid.setLocationRelativeTo( null );
 			JPanel temp = null;
 			panel1.setBackground(Color.BLUE);
-			panel2.setLayout( new GridLayout(6, 7));
-			JLabel[] labels = new JLabel[42];
+			panel2.setLayout( new GridLayout(7, 7));
+			JLabel[] labels = new JLabel[49];
 			blackline = BorderFactory.createLineBorder(Color.black);
 			empty = BorderFactory.createEmptyBorder();
 
@@ -77,7 +76,7 @@ import java.awt.Dimension;
 		    		   {  
 		    			   public void mouseClicked(MouseEvent e)  
 		    			   {  
-		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 		    			   }  
 		    		   }); 
 		    		label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -88,14 +87,13 @@ import java.awt.Dimension;
 
 			}
 		    String[] months = { "January","February", "March","April","May","June", "July", "August", "September", "October", "November", "December"};
-
 		    final JComboBox<String> cb = new JComboBox<String>(months);
 		    cb.addActionListener(
 		                new ActionListener(){
 		                    public void actionPerformed(ActionEvent e){
 		                       String currentMonth = (String)cb.getSelectedItem();
 		                       if (currentMonth == "January"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
 		           		    		   if (i < 42 && i > 10) {
@@ -105,7 +103,7 @@ import java.awt.Dimension;
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -113,7 +111,7 @@ import java.awt.Dimension;
 		           		    	   }
 		        		       }
 		           		       if (currentMonth == "February"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
 		           		    		   if (i < 35) {
@@ -123,7 +121,7 @@ import java.awt.Dimension;
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -131,7 +129,7 @@ import java.awt.Dimension;
 		           		    	   }
 		        		       }
 		           		       if (currentMonth == "March"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
 		           		    		   if (i < 38) {
@@ -141,7 +139,7 @@ import java.awt.Dimension;
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -149,7 +147,7 @@ import java.awt.Dimension;
 		           		    	   }
 		        		       }
 		           		       if (currentMonth == "April"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
 		           		    		   if (i < 40 && i > 9) {
@@ -159,7 +157,7 @@ import java.awt.Dimension;
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -167,17 +165,17 @@ import java.awt.Dimension;
 		           		    	   }
 		        		       }
 		           		       if (currentMonth == "May"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
-		           		    		   if (i > 11) {
+		           		    		   if (i > 11 && i < 43) {
 			           		    		   labels[i].setText(Integer.toString(i-11));
 			           		    		   labels[i].setBorder(blackline);
 			           		    		   labels[i].addMouseListener(new MouseAdapter()  
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -185,7 +183,7 @@ import java.awt.Dimension;
 		           		    	   }
 		        		       }
 		           		       if (currentMonth == "June"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
 		           		    		   if (i < 38 && i > 7) {
@@ -195,7 +193,7 @@ import java.awt.Dimension;
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -203,7 +201,7 @@ import java.awt.Dimension;
 		           		    	   }
 		        		       }
 		           		       if (currentMonth == "July"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
 		           		    		   if (i < 41 && i > 9) {
@@ -213,7 +211,7 @@ import java.awt.Dimension;
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -221,17 +219,17 @@ import java.awt.Dimension;
 		           		    	   }
 		        		       }
 		           		       if (currentMonth == "August"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
-		           		    		   if (i > 12) {
+		           		    		   if (i > 12 && i < 44) {
 			           		    		   labels[i].setText(Integer.toString(i-12));
 			           		    		   labels[i].setBorder(blackline);
 			           		    		   labels[i].addMouseListener(new MouseAdapter()  
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -239,7 +237,7 @@ import java.awt.Dimension;
 		           		    	   }
 		        		       }
 		           		       if (currentMonth == "September"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
 		           		    		   if (i < 39 && i > 8) {
@@ -249,7 +247,7 @@ import java.awt.Dimension;
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -257,7 +255,7 @@ import java.awt.Dimension;
 		           		    	   }
 		        		       }
 		           		       if (currentMonth == "October"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
 		           		    		   if (i > 10 && i < 42) {
@@ -267,7 +265,7 @@ import java.awt.Dimension;
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -275,7 +273,7 @@ import java.awt.Dimension;
 		           		    	   }
 		        		       }
 		           		       if (currentMonth == "November"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
 		           		    		   if (i < 37 && i > 6) {
@@ -285,7 +283,7 @@ import java.awt.Dimension;
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -293,7 +291,7 @@ import java.awt.Dimension;
 		           		    	   }
 		        		       }
 		           		       if (currentMonth == "December"){
-		           		    	   for (int i = 7; i < 42; i++ ){ 
+		           		    	   for (int i = 7; i < 49; i++ ){ 
 		           		    		   labels[i].setText("");
 		           		    		   labels[i].setBorder(empty);
 		           		    		   if (i < 40 && i > 8) {
@@ -303,7 +301,7 @@ import java.awt.Dimension;
 			           		    		   {  
 			           		    			   public void mouseClicked(MouseEvent e)  
 			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Yer a fluffy, Harry");
+			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
 			           		    			   }  
 			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
