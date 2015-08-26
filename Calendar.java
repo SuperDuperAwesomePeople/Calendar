@@ -49,6 +49,21 @@ import java.awt.Dimension;
 
 			for (int i = 0; i < labels.length; i++) {
 			    JLabel label = new JLabel("", SwingConstants.CENTER);
+			    if (i == 0){
+			    	label.setText("Sunday");
+			    } else if (i == 1) {
+			    	label.setText("Monday");
+			    } else if (i == 2) {
+			    	label.setText("Tuesday");
+			    } else if (i == 3) {
+			    	label.setText("Wednesday");
+			    } else if (i == 4) {
+			    	label.setText("Thursday");
+			    } else if (i == 5) {
+			    	label.setText("Friday");
+			    } else if (i == 6) {
+			    	label.setText("Saturday");
+			    }
 			    label.setPreferredSize(new Dimension(22, 22 )); 
 			    if (i <= 37 && i > 6) {
 			    	label.setText(Integer.toString(i-6));
