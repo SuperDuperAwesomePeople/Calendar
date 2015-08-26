@@ -67,6 +67,7 @@ import java.awt.Dimension;
 			    label.setPreferredSize(new Dimension(22, 22 )); 
 			    if (i <= 37 && i > 6) {
 			    	label.setText(Integer.toString(i-6));
+			    	label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			        label.setHorizontalTextPosition(JLabel.RIGHT);
 					label.setBorder(blackline);
 					label.addMouseListener(new MouseAdapter()  
@@ -119,3 +120,4 @@ import java.awt.Dimension;
 		}
 
 }
+	
