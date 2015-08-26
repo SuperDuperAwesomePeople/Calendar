@@ -37,7 +37,7 @@ import java.awt.Dimension;
 			panel1.setPreferredSize(new Dimension(150, 150));
 			panel2.setPreferredSize(new Dimension(350,300));
 			grid.setTitle("Calendar");
-			grid.setSize(500,350);
+			grid.setSize(1000,600);
 			grid.setResizable( true );
 			grid.setLocationRelativeTo( null );
 			JPanel temp = null;
