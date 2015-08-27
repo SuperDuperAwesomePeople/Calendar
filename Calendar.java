@@ -15,10 +15,12 @@ import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
@@ -32,15 +34,29 @@ import java.awt.Dimension;
 		static JFrame app;
 		static JPanel panel1 = new JPanel();
 		static JPanel panel2 = new JPanel();
+		static JPanel addEvent = new JPanel();
 		static Border blackline;
 		static Border empty;
 		static JButton cmd = new JButton();
 		public static void main(String[] args) {
+			JTextField addEventText = new JTextField();
+			addEvent.add(addEventText);
 			
 			cmd.setText("Add Event");
 			cmd.setVerticalTextPosition(AbstractButton.CENTER);
 			cmd.setHorizontalTextPosition(AbstractButton.LEADING);
 			cmd.setEnabled(true);
+			cmd.addActionListener(new ActionListener()
+			{
+			  public void actionPerformed(ActionEvent e)
+			  {
+			    JDialog d = new JDialog(grid, "Add Your Event Here", true);
+			    d.setLocationRelativeTo(grid);
+			    d.add(addEvent);
+			    d.setMinimumSize(new Dimension(300, 200));
+			    d.setVisible(true);
+			  }
+			});
 			
 			container.setLayout(new BoxLayout(container, BoxLayout.X_AXIS));
 			Color cbc = new Color(118, 196, 174);
