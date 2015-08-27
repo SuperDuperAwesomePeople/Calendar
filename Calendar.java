@@ -8,6 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -33,7 +34,7 @@ import java.awt.Dimension;
 		static Border empty;
 		public static void main(String[] args) {
 			container.setLayout(new BoxLayout(container, BoxLayout.X_AXIS));
-			
+			Color cbc = new Color(118, 196, 174);
 			grid.add(panel1);
 			grid.add(panel2);
 			panel1.setPreferredSize(new Dimension(150, 150));
@@ -43,7 +44,7 @@ import java.awt.Dimension;
 			grid.setResizable( true );
 			grid.setLocationRelativeTo( null );
 			JPanel temp = null;
-			panel1.setBackground(Color.BLUE);
+			panel1.setBackground(cbc);
 			panel2.setLayout( new GridLayout(7, 7));
 			JLabel[] labels = new JLabel[49];
 			blackline = BorderFactory.createLineBorder(Color.black);
