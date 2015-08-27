@@ -8,6 +8,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import javax.swing.AbstractButton;
@@ -38,25 +40,29 @@ import java.awt.Dimension;
 		static Border blackline;
 		static Border empty;
 		static JButton cmd = new JButton();
+		static Map<Integer, String> shrektEvents = new HashMap<Integer, String>();
+		
 		public static void main(String[] args) {
-			JTextField addEventText = new JTextField();
-			addEvent.add(addEventText);
-			
-			cmd.setText("Add Event");
+		    String[] months = { "January","February", "March","April","May","June", "July", "August", "September", "October", "November", "December"};
+		    final JComboBox<String> bunny = new JComboBox<String>(months);
+			Integer[] days = new Integer[31];
+			for (int i = 1; i < 32; i++) {
+				shrektEvents.put(i, "");
+				shrektEvents.put(i, "");
+				shrektEvents.put(i, "");
+				days[i-1] = i;
+			}
+			cmd.setText("Submit Event to Fap Agency");
 			cmd.setVerticalTextPosition(AbstractButton.CENTER);
 			cmd.setHorizontalTextPosition(AbstractButton.LEADING);
 			cmd.setEnabled(true);
-			cmd.addActionListener(new ActionListener()
-			{
-			  public void actionPerformed(ActionEvent e)
-			  {
-			    JDialog d = new JDialog(grid, "Add Your Event Here", true);
-			    d.setLocationRelativeTo(grid);
-			    d.add(addEvent);
-			    d.setMinimumSize(new Dimension(300, 200));
-			    d.setVisible(true);
-			  }
-			});
+			JTextField addEventText = new JTextField("Event Name");
+		    final JComboBox<Integer> dayzz = new JComboBox<Integer>(days);
+			addEvent.add(addEventText);
+			addEvent.add(bunny);
+		    addEvent.add(dayzz);
+		    addEvent.add(cmd);
+			
 			
 			container.setLayout(new BoxLayout(container, BoxLayout.X_AXIS));
 			Color cbc = new Color(118, 196, 174);
@@ -73,8 +79,8 @@ import java.awt.Dimension;
 			JLabel[] labels = new JLabel[49];
 			blackline = BorderFactory.createLineBorder(Color.black);
 			empty = BorderFactory.createEmptyBorder();
-
-
+			
+			
 			for (int i = 0; i < labels.length; i++) {
 			    JLabel label = new JLabel("", SwingConstants.CENTER);
 			    if (i == 0){
@@ -101,7 +107,11 @@ import java.awt.Dimension;
 		    		   {  
 		    			   public void mouseClicked(MouseEvent e)  
 		    			   {  
-		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
+		    				    JDialog d = new JDialog(grid, "Add Event", true);
+		    				    d.setLocationRelativeTo(grid);
+		    				    d.add(addEvent);
+		    				    d.setMinimumSize(new Dimension(700, 120));
+		    				    d.setVisible(true);
 		    			   }  
 		    		   }); 
 		    		label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -111,8 +121,8 @@ import java.awt.Dimension;
 			    labels[i] = label;
 
 			}
-		    String[] months = { "January","February", "March","April","May","June", "July", "August", "September", "October", "November", "December"};
 		    final JComboBox<String> cb = new JComboBox<String>(months);
+
 		    cb.addActionListener(
 		                new ActionListener(){
 		                    public void actionPerformed(ActionEvent e){
@@ -124,14 +134,9 @@ import java.awt.Dimension;
 		           		    		   if (i < 42 && i > 10) {
 			           		    		   labels[i].setText(Integer.toString(i-10));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -142,14 +147,9 @@ import java.awt.Dimension;
 		           		    		   if (i < 35) {
 			           		    		   labels[i].setText(Integer.toString(i-6));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -160,14 +160,9 @@ import java.awt.Dimension;
 		           		    		   if (i < 38) {
 			           		    		   labels[i].setText(Integer.toString(i-6));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -178,14 +173,9 @@ import java.awt.Dimension;
 		           		    		   if (i < 40 && i > 9) {
 			           		    		   labels[i].setText(Integer.toString(i-9));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -196,14 +186,9 @@ import java.awt.Dimension;
 		           		    		   if (i > 11 && i < 43) {
 			           		    		   labels[i].setText(Integer.toString(i-11));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -214,14 +199,9 @@ import java.awt.Dimension;
 		           		    		   if (i < 38 && i > 7) {
 			           		    		   labels[i].setText(Integer.toString(i-7));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -232,14 +212,9 @@ import java.awt.Dimension;
 		           		    		   if (i < 41 && i > 9) {
 			           		    		   labels[i].setText(Integer.toString(i-9));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -250,14 +225,9 @@ import java.awt.Dimension;
 		           		    		   if (i > 12 && i < 44) {
 			           		    		   labels[i].setText(Integer.toString(i-12));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -268,14 +238,9 @@ import java.awt.Dimension;
 		           		    		   if (i < 39 && i > 8) {
 			           		    		   labels[i].setText(Integer.toString(i-8));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -286,14 +251,9 @@ import java.awt.Dimension;
 		           		    		   if (i > 10 && i < 42) {
 			           		    		   labels[i].setText(Integer.toString(i-10));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -304,14 +264,9 @@ import java.awt.Dimension;
 		           		    		   if (i < 37 && i > 6) {
 			           		    		   labels[i].setText(Integer.toString(i-6));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -322,14 +277,9 @@ import java.awt.Dimension;
 		           		    		   if (i < 40 && i > 8) {
 			           		    		   labels[i].setText(Integer.toString(i-8));
 			           		    		   labels[i].setBorder(blackline);
-			           		    		   labels[i].addMouseListener(new MouseAdapter()  
-			           		    		   {  
-			           		    			   public void mouseClicked(MouseEvent e)  
-			           		    			   {  
-			           		    				   JOptionPane.showMessageDialog(null, "Events Listed Here");
-			           		    			   }  
-			           		    		   }); 
 			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		           		    		   } else {
+			           		    		   labels[i].setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		           		    		   }
 		           		    	   }
 		        		       }
@@ -340,7 +290,6 @@ import java.awt.Dimension;
 
 		    cb.setVisible(true);
 		    panel1.add(cb);
-			panel1.add(cmd);
 			grid.setVisible(true);
 			
 			
