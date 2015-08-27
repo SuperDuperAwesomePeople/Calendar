@@ -10,8 +10,10 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -32,7 +34,14 @@ import java.awt.Dimension;
 		static JPanel panel2 = new JPanel();
 		static Border blackline;
 		static Border empty;
+		static JButton cmd = new JButton();
 		public static void main(String[] args) {
+			
+			cmd.setText("Add Event");
+			cmd.setVerticalTextPosition(AbstractButton.CENTER);
+			cmd.setHorizontalTextPosition(AbstractButton.LEADING);
+			cmd.setEnabled(true);
+			
 			container.setLayout(new BoxLayout(container, BoxLayout.X_AXIS));
 			Color cbc = new Color(118, 196, 174);
 			grid.add(panel1);
@@ -43,7 +52,6 @@ import java.awt.Dimension;
 			grid.setSize(1000,600);
 			grid.setResizable( true );
 			grid.setLocationRelativeTo( null );
-			JPanel temp = null;
 			panel1.setBackground(cbc);
 			panel2.setLayout( new GridLayout(7, 7));
 			JLabel[] labels = new JLabel[49];
@@ -316,6 +324,7 @@ import java.awt.Dimension;
 
 		    cb.setVisible(true);
 		    panel1.add(cb);
+			panel1.add(cmd);
 			grid.setVisible(true);
 			
 			
