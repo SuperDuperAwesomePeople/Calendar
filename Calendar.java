@@ -52,7 +52,7 @@ import java.awt.Dimension;
 				shrektEvents.put(i, "");
 				days[i-1] = i;
 			}
-			cmd.setText("Submit Event to Fap Agency");
+			cmd.setText("Submit Event to the Mudkip Fund");
 			cmd.setVerticalTextPosition(AbstractButton.CENTER);
 			cmd.setHorizontalTextPosition(AbstractButton.LEADING);
 			cmd.setEnabled(true);
